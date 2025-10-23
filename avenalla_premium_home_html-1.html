@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AVENALLA — Premium Home</title>
+  <meta name="description" content="Avenalla — Beauty meets innovation. Crystal Hair Eraser and self‑care essentials. Free shipping, free returns, 14‑night trial." />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#fffaf7;           /* base cream */
+      --paper:#ffffff;        /* cards */
+      --ink:#4a4a4a;          /* body text */
+      --head:#1c1b22;         /* headings */
+      --muted:#7a7a7a;        /* captions */
+      --gold:#b49a7d;         /* accent */
+      --gold-2:#c8a98e;       /* button */
+      --gold-3:#b0866d;       /* hover */
+      --line:#ece3da;         /* soft lines */
+      --radius:18px;
+      --shadow:0 12px 40px rgba(0,0,0,.07);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;}
+    h1,h2,h3,h4{font-family:"Playfair Display",Georgia,serif;color:var(--head);margin:0 0 .5rem}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:16px}
+    .container{width:min(1160px,92%);margin-inline:auto}
+    .pill{display:inline-block;padding:.35rem .8rem;border:1px solid #eaded2;border-radius:999px;background:#fff;color:#6b5c4a;font-size:.85rem}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold-2);color:#fff;padding:.9rem 1.2rem;border-radius:12px;font-weight:600;box-shadow:var(--shadow);border:1px solid #fff7}
+    .btn:hover{background:var(--gold-3)}
+    .btn.link{background:transparent;color:var(--gold-3);box-shadow:none;border:none;padding:0}
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.6);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    header.nav .row{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    nav a{margin-inline:.7rem;color:#6c6155}
+    nav a:hover{color:var(--head)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:3rem 0}
+    .hero .title{font-size:clamp(2rem,4vw,3.2rem);line-height:1.12}
+    .hero .media{background:linear-gradient(180deg,#fff,#f6efe7);border-radius:22px;padding:1rem;border:1px solid var(--line);box-shadow:var(--shadow)}
+
+    /* Icons strip */
+    .i-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .i-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1rem;display:flex;gap:.8rem;align-items:flex-start}
+    .i-ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:#f3ebe3;color:#9a7e66;font-size:1.2rem}
+
+    /* Product spotlight */
+    .spot{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:center}
+
+    /* Before/After */
+    .ba-wrap{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line)}
+    .ba-top{position:absolute;inset:0;overflow:hidden}
+    .ba-divider{position:absolute;top:0;bottom:0;width:2px;background:var(--gold)}
+    .ba-handle{position:absolute;top:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:var(--gold-2);border:4px solid #fff;color:#fff;box-shadow:var(--shadow);cursor:ew-resize}
+
+    /* Testimonials */
+    .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .t-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1rem}
+    .avatar{width:44px;height:44px;border-radius:50%;object-fit:cover}
+
+    /* Offer */
+    .offer{background:linear-gradient(135deg,#fff1f3,#fffaf2);border:1px solid #f1e5db;border-radius:20px;padding:1.2rem;text-align:center;box-shadow:var(--shadow)}
+
+    /* Benefits */
+    .b-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .b-item{display:flex;flex-direction:column;align-items:center;gap:.4rem;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1rem}
+
+    /* FAQ */
+    details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1rem}
+    details+details{margin-top:.6rem}
+    summary{cursor:pointer;font-weight:600;color:var(--head)}
+    summary::marker{content:""}
+    summary::after{content:"+";float:right;color:#a98e73}
+    details[open] summary::after{content:"–"}
+
+    footer{margin-top:2rem;padding:2.6rem 0;color:#7e756b;border-top:1px solid var(--line)}
+
+    /* Responsive */
+    @media (max-width: 1100px){ .hero{grid-template-columns:1fr} .spot{grid-template-columns:1fr} .t-grid,.b-strip,.i-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <!-- ======================= 1. HEADER / NAV ======================= -->
+  <header class="nav">
+    <div class="container row">
+      <div style="display:flex;align-items:center;gap:.6rem">
+        <div style="width:12px;height:12px;border-radius:50%;background:var(--gold)"></div>
+        <strong>AVENALLA</strong>
+      </div>
+      <nav>
+        <a href="#why">Why Avenalla</a>
+        <a href="#product">Product</a>
+        <a href="#results">Results</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn" href="#product">Shop Now</a>
+    </div>
+  </header>
+
+  <!-- ======================= 2. HERO SECTION ======================= -->
+  <section class="hero container">
+    <div>
+      <span class="pill">Beauty meets innovation</span>
+      <h1 class="title">Reveal your softest glow with <span style="color:var(--gold)">Avenalla</span>.</h1>
+      <p style="color:var(--muted);font-size:1.05rem">Crystal Hair Eraser designed for gentle, quick and reusable hair removal. Loved by thousands worldwide.</p>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem">
+        <a class="btn" href="#product">Shop Crystal Eraser</a>
+        <a class="btn link" href="#why">Learn more</a>
+      </div>
+      <p style="margin-top:.6rem;color:#9a8c7e;font-size:.9rem">Trusted by <strong>20,000+</strong> women ✨</p>
+    </div>
+    <div class="media">
+      <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1400&auto=format&fit=crop" alt="Avenalla device"/>
+    </div>
+  </section>
+
+  <!-- ======================= 3. WHY AVENALLA ======================= -->
+  <section id="why" class="container" style="padding:2.2rem 0">
+    <h2 style="text-align:center">Why Avenalla?</h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:1rem">Beauty, safety and convenience — in one daily ritual.</p>
+    <div class="i-grid">
+      <div class="i-card"><div class="i-ico">🧴</div><div><strong>Gentle on skin</strong><p style="margin:.2rem 0 0;color:var(--muted)">Suitable for most skin tones, designed for sensitive areas.</p></div></div>
+      <div class="i-card"><div class="i-ico">⚡</div><div><strong>Quick results</strong><p style="margin:.2rem 0 0;color:var(--muted)">Removes hair in seconds — no pain, no mess.</p></div></div>
+      <div class="i-card"><div class="i-ico">♻️</div><div><strong>Reusable & eco‑friendly</strong><p style="margin:.2rem 0 0;color:var(--muted)">Built to last and reduce single‑use waste.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ======================= 4. PRODUCT SPOTLIGHT ======================= -->
+  <section id="product" class="container" style="padding:2.2rem 0">
+    <div class="spot">
+      <div>
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1400&auto=format&fit=crop" alt="Product"/>
+      </div>
+      <div>
+        <h2>Meet the Crystal Hair Eraser</h2>
+        <p style="color:var(--muted)">Your new favorite self‑care ritual: elegant, safe and effortless. Designed to keep your skin smooth and vibrant, day after day.</p>
+        <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.6rem">
+          <a class="btn" href="#results">See real results</a>
+          <a class="btn link" href="#faq">Shipping & returns →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 5. BEFORE / AFTER ======================= -->
+  <section id="results" class="container" style="padding:2.2rem 0">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.6rem">
+      <h2>Visible results from day one</h2>
+      <span class="pill" style="border-color:#ead7c7;color:#a98e73">Real results — No filters</span>
+    </div>
+    <div class="ba-wrap" id="ba1">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1400&auto=format&fit=crop" alt="after"/>
+      <div class="ba-top"><img src="https://images.unsplash.com/photo-1496302662116-85c266235fe5?q=80&w=1400&auto=format&fit=crop" alt="before"/></div>
+      <div class="ba-divider" id="baDivider"></div>
+      <button class="ba-handle" id="baHandle">↔</button>
+    </div>
+  </section>
+
+  <!-- ======================= 6. TESTIMONIALS ======================= -->
+  <section id="reviews" class="container" style="padding:2.2rem 0">
+    <h2 style="text-align:center">Loved by women around the world 💕</h2>
+    <p style="text-align:center;color:var(--muted);margin-bottom:1rem">What our customers say</p>
+    <div class="t-grid">
+      <div class="t-card"><div style="display:flex;gap:.7rem;align-items:center"><img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300" alt="Betty"/><div><strong>Betty L.</strong><div style="color:var(--muted);font-size:.9rem">Verified</div></div></div><p style="margin:.6rem 0 0">“This is without a doubt my best purchase. Gentle on skin and the results are real.”</p></div>
+      <div class="t-card"><div style="display:flex;gap:.7rem;align-items:center"><img class="avatar" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=300" alt="Lucine"/><div><strong>Lucine T.</strong><div style="color:var(--muted);font-size:.9rem">Verified</div></div></div><p style="margin:.6rem 0 0">“So easy to use. I ditched waxing completely.”</p></div>
+      <div class="t-card"><div style="display:flex;gap:.7rem;align-items:center"><img class="avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=300" alt="Arwa"/><div><strong>Arwa S.</strong><div style="color:var(--muted);font-size:.9rem">Verified</div></div></div><p style="margin:.6rem 0 0">“Elegant design and real results. Highly recommend!”</p></div>
+    </div>
+  </section>
+
+  <!-- ======================= 7. OFFER BANNER ======================= -->
+  <section class="container" style="padding:1.6rem 0">
+    <div class="offer">
+      <strong style="font-family:'Playfair Display',serif;font-size:1.2rem;color:#815f43">Get 20% off your first order</strong>
+      <p style="color:var(--muted);margin:.3rem 0 .7rem">Use code <strong>AVENA20</strong> at checkout. Limited time.</p>
+      <a class="btn" href="#product">Claim offer now</a>
+    </div>
+  </section>
+
+  <!-- ======================= 8. BENEFITS STRIP ======================= -->
+  <section class="container" style="padding:1.6rem 0">
+    <div class="b-strip">
+      <div class="b-item"><div style="font-size:1.6rem">🚚</div><strong>Free Shipping</strong><span style="color:var(--muted);font-size:.9rem">Worldwide</span></div>
+      <div class="b-item"><div style="font-size:1.6rem">🔄</div><strong>Free Returns</strong><span style="color:var(--muted);font-size:.9rem">Easy & hassle‑free</span></div>
+      <div class="b-item"><div style="font-size:1.6rem">⏳</div><strong>14‑Night Trial</strong><span style="color:var(--muted);font-size:.9rem">Risk‑free</span></div>
+    </div>
+  </section>
+
+  <!-- ======================= 9. FAQ SECTION ======================= -->
+  <section id="faq" class="container" style="padding:2.2rem 0">
+    <h2>Frequently asked questions</h2>
+    <details><summary>Is it safe for sensitive skin?</summary><p style="color:var(--muted);margin-top:.5rem">Yes. The device is designed for most skin types. Test a small area first.</p></details>
+    <details><summary>How often should I use it?</summary><p style="color:var(--muted);margin-top:.5rem">1–2 times per week depending on hair growth.</p></details>
+    <details><summary>Does it replace waxing completely?</summary><p style="color:var(--muted);margin-top:.5rem">For many users yes, especially on arms and legs. It's painless and reusable.</p></details>
+  </section>
+
+  <!-- ======================= 10. FOOTER ======================= -->
+  <footer>
+    <div class="container" style="display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center">
+      <div>© <span id="y"></span> AVENALLA — All rights reserved.</div>
+      <div style="display:flex;gap:1rem;color:#9a8c7e"><a href="#">Shop</a><a href="#faq">FAQ</a><a href="#">Contact</a></div>
+    </div>
+  </footer>
+
+  <!-- ======================= 11. JS SCRIPT ======================= -->
+  <script>
+    // Year dynamic
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Before/After slider — logic
+    (function(){
+      const wrap = document.getElementById('ba1'); if(!wrap) return;
+      const top = wrap.querySelector('.ba-top');
+      const handle = document.getElementById('baHandle');
+      const divider = document.getElementById('baDivider');
+      const setX = (clientX)=>{
+        const r = wrap.getBoundingClientRect();
+        let x = Math.max(0, Math.min(clientX - r.left, r.width));
+        const pct = x / r.width * 100;
+        top.style.clipPath = `inset(0 ${100-pct}% 0 0)`;
+        handle.style.left = `${pct}%`;
+        divider.style.left = `${pct}%`;
+      };
+      const r0 = wrap.getBoundingClientRect(); setX(r0.left + r0.width*.5);
+      const move = (ev)=> setX((ev.touches?ev.touches[0].clientX:ev.clientX));
+      wrap.addEventListener('mousedown', ()=> window.addEventListener('mousemove', move));
+      window.addEventListener('mouseup', ()=> window.removeEventListener('mousemove', move));
+      wrap.addEventListener('touchstart', move, {passive:true});
+      wrap.addEventListener('touchmove', move, {passive:true});
+      wrap.addEventListener('click', move);
+    })();
+
+    // ======================= Basic TESTS (dev console) =======================
+    (function runTests(){
+      const tests = [];
+      const ok = (name, cond) => tests.push({ name, pass: !!cond });
+      ok('Header exists', document.querySelector('header.nav'));
+      ok('Hero title text set', /Avenalla/i.test(document.querySelector('.hero .title')?.textContent||''));
+      ok('Why section has 3 items', document.querySelectorAll('#why .i-card').length === 3);
+      ok('Before/After slider present', document.getElementById('ba1'));
+      ok('Year injected', /20\d{2}/.test(document.getElementById('y')?.textContent||''));
+
+      // render results in console
+      const passed = tests.filter(t=>t.pass).length;
+      console.group('%cAvenalla Tests','color:#815f43;font-weight:bold');
+      tests.forEach(t=> console.log(`${t.pass?'✅':'❌'} ${t.name}`));
+      console.log(`Passed ${passed}/${tests.length}`);
+      console.groupEnd();
+    })();
+  </script>
+</body>
+</html>
